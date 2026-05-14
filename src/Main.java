@@ -26,10 +26,10 @@ public class Main {
                     withdraw();
                     break;
                 case 4:
-                    System.out.println("Check Balance - coming soon");
+                    checkBalance();
                     break;
                 case 5:
-                    System.out.println("Search Account - coming soon");
+                    searchAccount();
                     break;
                 case 6:
                     System.out.println("View All Accounts - coming soon");
@@ -135,6 +135,38 @@ public class Main {
 
         balances[index] -= amount;
         System.out.println("Withdrawal successful! New balance: " + balances[index]);
+    }
+
+    public static void checkBalance(){
+        System.out.print("Enter Account Number: ");
+        scanner.nextLine();
+        String accNumber = scanner.nextLine();
+
+        int index = findAccount(accNumber);
+        if(index == -1) {
+            System.out.println("Account not found.");
+            return;
+        }
+
+        System.out.println("Account Number: " + accountNumbers[index]);
+        System.out.println("Name: " + names[index]);
+        System.out.println("Balance: " + balances[index]);
+    }
+
+    public static void searchAccount() {
+        System.out.print("Enter Account Number: ");
+        scanner.nextLine();
+        String accNumber = scanner.nextLine();
+
+        int index = findAccount(accNumber);
+        if(index == -1) {
+            System.out.println("Account not found.");
+            return;
+        }
+
+        System.out.println("Account Number: " + accountNumbers[index]);
+        System.out.println("Name: " + names[index]);
+        System.out.println("Balance: " + balances[index]);
     }
 
 }
