@@ -58,6 +58,10 @@ public class Main {
     }
 
     public static void createAccount() {
+        if(totalAccounts >= 100) {
+            System.out.println("Bank is full. Cannot create more accounts.");
+            return;
+        }
         System.out.print("Enter account holder name: ");
         scanner.nextLine(); // flush
         String name = scanner.nextLine();
