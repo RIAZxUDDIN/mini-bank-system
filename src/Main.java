@@ -32,7 +32,7 @@ public class Main {
                     searchAccount();
                     break;
                 case 6:
-                    System.out.println("View All Accounts - coming soon");
+                    viewAllAccounts();
                     break;
                 case 7:
                     System.out.println("Goodbye!");
@@ -167,6 +167,19 @@ public class Main {
         System.out.println("Account Number: " + accountNumbers[index]);
         System.out.println("Name: " + names[index]);
         System.out.println("Balance: " + balances[index]);
+    }
+
+    public static void viewAllAccounts() {
+        if(totalAccounts == 0) {
+            System.out.println("No accounts found.");
+            return;
+        }
+        for(int i = 0; i<totalAccounts; i++) {
+            System.out.println("Account Number: " + accountNumbers[i]);
+            System.out.println("Name: " + names[i]);
+            System.out.println("Balance: " + balances[i]);
+            System.out.println("--------------------");
+        }
     }
 
 }
